@@ -3,6 +3,8 @@
     <style name="Base.Theme.FIXITKUV1" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/ETOutlineACTIVE1</item> // Activated State
+        <item name="colorOnSurface">@color/ETOutlineINACTIVE1</item> // Normal State
     </style>
 
     <style name="Theme.FIXITKUV1" parent="Base.Theme.FIXITKUV1" />

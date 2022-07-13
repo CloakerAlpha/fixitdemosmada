@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="accent3">#23C3CB</color>
+    <color name="ETOutlineACTIVE1">#FFFFFFFF</color>
+    <color name="ETOutlineINACTIVE1">#48CAE4</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="text1">#ADE8F4</color>
+    <color name="texthint1">#00B4D8</color>
+    <color name="textlink1">#0077B6</color>
 </resources>
