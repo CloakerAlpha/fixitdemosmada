@@ -1,81 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#023e8a">
 
-    <LinearLayout
-        android:id="@+id/headerloginContainer"
+    <androidx.core.widget.NestedScrollView
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|top"
-        android:background="@drawable/headerlogin"
-        android:gravity="bottom|center|center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/LOGINTITLE"
-            android:layout_width="wrap_content"
-            android:layout_height="107dp"
-            android:layout_gravity="center|fill|center_vertical"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="@font/aldrich"
-            android:gravity="center"
-            android:text="NAMA APLIKASI"
-            android:textColor="#FFFFFF"
-            android:textSize="60sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/loginbackground_layer"
+        android:backgroundTint="#61FFFFFF"
+        android:backgroundTintMode="multiply">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|clip_vertical"
+            android:layout_gravity="center"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/img_logofixit1"
-                android:layout_width="325dp"
-                android:layout_height="251dp"
-                android:layout_gravity="center|center_vertical"
-                app:srcCompat="@drawable/gambar_logofixit2" />
+                android:layout_width="321dp"
+                android:layout_height="220dp"
+                android:layout_gravity="clip_horizontal|center|center_vertical"
+                android:background="@drawable/logoborderline_login"
+                android:padding="10dp"
+                app:srcCompat="@drawable/gambar_logofixit" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
                 <LinearLayout
                     android:id="@+id/linearLayout"
-                    android:layout_width="616dp"
-                    android:layout_height="271dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_width="478dp"
+                    android:layout_height="319dp"
+                    android:layout_marginTop="100dp"
                     android:background="@drawable/login_bg1"
                     android:gravity="center|center_horizontal"
                     android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/outlinedTextField"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
                         android:layout_width="match_parent"
-                        android:layout_height="65dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="16dp"
                         android:hint="@string/hintUsernameTF"
+                        android:padding="10dp"
+                        android:textColorHint="@color/white"
+                        app:boxStrokeColor="@color/accent3"
+                        app:boxStrokeWidth="3dp"
                         app:hintTextColor="@color/white">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -83,7 +70,7 @@
                             android:layout_height="wrap_content"
                             android:drawableLeft="@drawable/ic_baseline_account_box_24"
                             android:drawablePadding="15dp"
-                            android:textColor="#ADE8F4"
+                            android:textColor="@color/accent8"
                             android:textColorHighlight="@color/white"
                             android:textColorHint="#FFFFFF"
                             android:textColorLink="#F8F8F8"
@@ -96,18 +83,24 @@
                         android:id="@+id/outlinedTextField2"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="63dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="16dp"
-                        android:hint="@string/hintPasswordTF">
+                        android:hint="@string/hintPasswordTF"
+                        android:padding="10dp"
+                        android:textColorHint="@color/white"
+                        app:boxStrokeColor="@color/accent3"
+                        app:boxStrokeWidth="3dp"
+                        app:hintTextColor="#FFFFFF">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableLeft="@drawable/ic_baseline_lock_open_24"
                             android:drawablePadding="15dp"
-                            android:textColor="#ADE8F4"
+                            android:inputType="textPassword"
+                            android:textColor="@color/accent8"
                             android:textColorHighlight="@color/white"
                             android:textColorHint="#FFFFFF"
                             android:textColorLink="#F8F8F8"
@@ -116,25 +109,72 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_login"
+                            android:layout_width="127dp"
+                            android:layout_height="63dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="@color/accent4"
+                            android:letterSpacing="0.1"
+                            android:text="LOGIN"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            app:cornerRadius="10dp" />
+
+                        <Button
+                            android:id="@+id/btn_register"
+                            android:layout_width="127dp"
+                            android:layout_height="63dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="@color/accent4"
+                            android:letterSpacing="0.1"
+                            android:text="REGISTER"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            app:cornerRadius="10dp" />
+
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/FOOTERLOGIN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:drawableStart="@drawable/layerlistfooter"
-                android:drawablePadding="5dp"
-                android:gravity="center"
-                android:text="SMA NEGERI 2 LAMONGAN FORUM SEMBILAN IT @2022"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:textStyle="bold" />
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/accent4"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/FOOTERLOGIN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:drawableStart="@drawable/drawableleftfooter_layer"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:padding="5dp"
+            android:text=" 2022 &#169; FIX APP"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

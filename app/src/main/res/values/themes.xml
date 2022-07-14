@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.FIXITKUV1" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="colorPrimary">@color/ETOutlineACTIVE1</item> // Activated State
-        <item name="colorOnSurface">@color/ETOutlineINACTIVE1</item> // Normal State
+        <item name="colorPrimary">@color/accent4</item>
+        <!-- <item name="colorPrimary">@color/accent4</item> // Activated State -->
+        <!-- <item name="colorOnSurface">@color/white</item> // Normal State -->
     </style>
 
     <style name="Theme.FIXITKUV1" parent="Base.Theme.FIXITKUV1" />
