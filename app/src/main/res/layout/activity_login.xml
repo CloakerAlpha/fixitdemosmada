@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#023e8a">
+    android:background="@color/accent1">
 
     <androidx.core.widget.NestedScrollView
-        android:fillViewport="true"
-        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:background="@drawable/loginbackground_layer"
         android:backgroundTint="#61FFFFFF"
-        android:backgroundTintMode="multiply">
+        android:backgroundTintMode="multiply"
+        android:fitsSystemWindows="true">
 
         <LinearLayout
             android:layout_width="match_parent"

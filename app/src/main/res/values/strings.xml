@@ -4,6 +4,8 @@
     <!-- Strings used for fragments for navigation -->
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-    <string name="hintUsernameTF">Username</string>
-    <string name="hintPasswordTF">Password</string>
+    <string name="hintUsernameTF">Nama</string>
+    <string name="hintPasswordTF">Kata Sandi</string>
+    <string name="hintKelasTF">Kelas</string>
+    <string name="hintNomorSiswaTF">Nomor Siswa</string>
 </resources>

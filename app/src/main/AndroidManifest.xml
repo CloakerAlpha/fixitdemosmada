@@ -30,6 +30,11 @@
             android:exported="true">
         </activity>
         <activity
+            android:windowSoftInputMode="adjustResize"
+            android:name="com.example.fixitkuv1.RegisterAct"
+            android:exported="true">
+        </activity>
+        <activity
             android:name="com.example.fixitkuv1.MainActivity"
             android:exported="true">
         </activity>
