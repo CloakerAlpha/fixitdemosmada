@@ -2,6 +2,7 @@ package com.example.fixitkuv1.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,7 @@ import com.example.fixitkuv1.adapters.AdapterDashboardMateri
 import com.example.fixitkuv1.databinding.ActivityDashboardBinding
 import com.example.fixitkuv1.dataclasses.DataModelUser
 import com.example.fixitkuv1.fragments.AccountDetailFrag
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.synnapps.carouselview.CarouselView
 import com.synnapps.carouselview.ImageListener
 
@@ -32,40 +34,51 @@ class DashboardAct : AppCompatActivity() {
     )
 
     private lateinit var binding: ActivityDashboardBinding
+    private lateinit var botnavitemMain: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        botnavitemMain = binding.botnav1
 
-        //val namaSiswa = FixAppClass.sessionManager.getString("nama")
-        //binding.tvDashboardmembers.text = namaSiswa
+        botnavitemMain.selectedItemId = R.id.botnav_home
+        botnavitemMain.setOnItemSelectedListener { item ->
 
-        binding.botnav1.setOnItemSelectedListener { item ->
             val fragment: Fragment?
+            val previousItem = botnavitemMain.selectedItemId
+            val nextItem = item.itemId
+
             when (item.itemId) {
                 R.id.botnav_account -> {
-                    //toolbar?.setTitle("Home")
-                    fragment = AccountDetailFrag()
-                    loadFragment(fragment)
+                    //if(previousItem != nextItem){
+                        //toolbar?.setTitle("Home")
+                        fragment = AccountDetailFrag()
+                        loadFragment(fragment)
+                    //}
+
                     true
                 }
                 R.id.botnav_home -> {
-                    //onBackPressed()
+
+                    val currentFragment = supportFragmentManager.findFragmentById(R.id.fl_dashboard)
+                    if(currentFragment is AccountDetailFrag) {
+                        this.supportFragmentManager
+                            .beginTransaction()
+                            .remove(currentFragment)
+                            .commit();
+                    }
                     true
-
                 }
-
                 else -> false
             }
-
         }
 
         binding.botnav1.setOnItemReselectedListener { item ->
             when (item.itemId) {
                 R.id.botnav_account -> {
-                    Toast.makeText(this, "ACCOUNT PAGE Item reselected", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "ACCOUNT PAGE reselected", Toast.LENGTH_SHORT).show()
                 }
                 R.id.botnav_home -> {
                     Toast.makeText(this, "HOME PAGE reselected", Toast.LENGTH_SHORT).show()
@@ -159,7 +172,21 @@ class DashboardAct : AppCompatActivity() {
             .override(125,125).into(binding.imgAvatar13)
         Glide.with(this@DashboardAct).load(R.drawable.ava1a)
             .override(125,125).into(binding.imgAvatar14)
-        binding.botnav1.selectedItemId = R.id.botnav_home
+
+    }
+
+    override fun onBackPressed() {
+        //var menuItem = binding.botnav1.menu.getItem(0).toString()
+        botnavitemMain = binding.botnav1
+        val iconHomeSelected = botnavitemMain.selectedItemId
+
+        if(iconHomeSelected!= 1 ){
+            botnavitemMain.selectedItemId = R.id.botnav_home
+            supportFragmentManager.beginTransaction().addToBackStack(null).commit()
+        } else {
+            super.onBackPressed()
+        }
+
     }
 
     private var imageListener: ImageListener = ImageListener { position, imageView ->

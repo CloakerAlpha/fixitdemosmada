@@ -52,17 +52,6 @@ class SessionManager(_context: Context) {
 
     companion object {
         private val PREF_NAME = "fixapp_session"
-        val tipe: String = ""
-        val nis: String = ""
-        val kelas: String = ""
-        val email: String = ""
-        val nama: String = ""
-
         val SESSION_TOKEN = "token"
-        //  val NAMA = "nama"
-        // val EMAIL = "email"
-        // val KELAS = "kelas"
-        // val NIS = "nomorsiswa"
-        //val TIPE = "nomorsiswa"
     }
 }

@@ -33,8 +33,14 @@ class AccountDetailFrag : Fragment() {
         _binding = FragmentAccountDetailBinding.inflate(layoutInflater)
         // after inflate, do ur code to modify the layout so the data can be displayed
         val namaSiswa = FixAppClassSession.sessionManager.getString("nama", )
+        val emailSiswa = FixAppClassSession.sessionManager.getString("email", )
+        val kelasSiswa = FixAppClassSession.sessionManager.getString("kelas", )
+        val nomorSiswa = FixAppClassSession.sessionManager.getString("nomorsiswa", )
         _binding?.etiDetailUsername?.setText(namaSiswa)
-        _binding?.tvTestdata?.text = namaSiswa
+        _binding?.etiDetailEmail?.setText(emailSiswa)
+        _binding?.etiDetailClass?.setText(kelasSiswa)
+        _binding?.etiDetailNis?.setText(nomorSiswa)
+
 
         _binding!!.btnOut.setOnClickListener {
             FixAppClassSession.sessionManager.clearSession()
