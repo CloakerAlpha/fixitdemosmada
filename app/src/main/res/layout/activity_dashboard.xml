@@ -4,53 +4,223 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashboardAct">
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="10dp">
-
-        <com.synnapps.carouselview.CarouselView
-            android:id="@+id/carouselView"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            app:fillColor="#FFFFFFFF"
-            app:pageColor="#00000000"
-            app:radius="6dp"
-            app:slideInterval="3000"
-            app:strokeColor="#FF777777"
-            app:strokeWidth="1dp">
-
-        </com.synnapps.carouselview.CarouselView>
-    </androidx.cardview.widget.CardView>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:labelVisibilityMode="unlabeled"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
-        app:itemIconSize="30dp"
-        app:menu="@menu/botnav_menu" >
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+    tools:context=".view.DashboardAct">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/botnav1"
         android:background="@color/accent3"
         android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="bottom"
             android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="10dp">
+
+                <com.synnapps.carouselview.CarouselView
+                    android:id="@+id/carouselView"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:fillColor="#FFFFFFFF"
+                    app:pageColor="#00000000"
+                    app:radius="6dp"
+                    app:slideInterval="3000"
+                    app:strokeColor="#FF777777"
+                    app:strokeWidth="1dp">
+
+                    <ImageView
+                        android:id="@+id/img_carouseldashboard"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        tools:srcCompat="@tools:sample/avatars" />
+                </com.synnapps.carouselview.CarouselView>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="375dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    tools:listitem="@layout/dashboard_rv_layout" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_textmember"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_dashboardmembers"
+                    android:layout_width="199dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/oswald"
+                    android:padding="5dp"
+                    android:text="★ Meet Our Members ★"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/img_avatar1"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        tools:src="@tools:sample/avatars"
+                        tools:srcCompat="@tools:sample/avatars" />
+
+                    <ImageView
+                        android:id="@+id/img_avatar2"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        tools:src="@tools:sample/avatars" />
+
+                    <ImageView
+                        android:id="@+id/img_avatar3"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        tools:src="@tools:sample/avatars" />
+
+                    <ImageView
+                        android:id="@+id/img_avatar4"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        tools:src="@tools:sample/avatars" />
+
+                    <ImageView
+                        android:id="@+id/img_avatar5"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        tools:src="@tools:sample/avatars" />
+
+                    <ImageView
+                        android:id="@+id/img_avatar6"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        tools:src="@tools:sample/avatars" />
+
+                    <ImageView
+                        android:id="@+id/img_avatar7"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        tools:src="@tools:sample/avatars" />
+
+                    <ImageView
+                        android:id="@+id/img_avatar8"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        tools:src="@tools:sample/avatars" />
+
+                    <ImageView
+                        android:id="@+id/img_avatar9"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        tools:src="@tools:sample/avatars" />
+
+                    <ImageView
+                        android:id="@+id/img_avatar10"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        tools:src="@tools:sample/avatars" />
+
+                    <ImageView
+                        android:id="@+id/img_avatar11"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        tools:src="@tools:sample/avatars" />
+
+                    <ImageView
+                        android:id="@+id/img_avatar12"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        tools:src="@tools:sample/avatars" />
+
+                    <ImageView
+                        android:id="@+id/img_avatar13"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        tools:src="@tools:sample/avatars" />
+
+                    <ImageView
+                        android:id="@+id/img_avatar14"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        tools:src="@tools:sample/avatars" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/botnav1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        app:itemIconSize="30dp"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/botnav_menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <FrameLayout
+        android:id="@+id/fl_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 
 </RelativeLayout>

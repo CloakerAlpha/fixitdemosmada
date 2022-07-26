@@ -65,6 +65,7 @@
                         app:hintTextColor="@color/white">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/namaET"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableLeft="@drawable/ic_baseline_account_box_24"
@@ -94,6 +95,7 @@
                         app:hintTextColor="#FFFFFF">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/katasandiET"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableLeft="@drawable/ic_baseline_lock_open_24"
@@ -123,6 +125,7 @@
                             android:layout_margin="10dp"
                             android:backgroundTint="@color/accent4"
                             android:letterSpacing="0.1"
+                            android:onClick="onClick"
                             android:text="LOGIN"
                             android:textColor="@color/white"
                             android:textStyle="bold"
@@ -136,6 +139,7 @@
                             android:layout_margin="10dp"
                             android:backgroundTint="@color/accent4"
                             android:letterSpacing="0.1"
+                            android:onClick="onClick"
                             android:text="REGISTER"
                             android:textColor="@color/white"
                             android:textStyle="bold"

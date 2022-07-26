@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/accdetailcontainerFrag"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/accent1">
+    android:background="@color/accent1"
+    android:onClick="onClick"
+    tools:context=".fragments.AccountDetailFrag">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -12,10 +15,10 @@
         android:fillViewport="true">
 
         <LinearLayout
-            android:focusable="true"
-            android:focusableInTouchMode="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,15 +26,14 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/btn_registered"
+                    android:id="@+id/btn_out"
                     android:layout_width="127dp"
                     android:layout_height="63dp"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/accent4"
                     android:letterSpacing="0.1"
-                    android:onClick="onClick"
-                    android:text="DAFTAR"
+                    android:text="LOG OUT"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     app:cornerRadius="10dp"
@@ -39,7 +41,19 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-                    app:layout_constraintVertical_bias="0.211" />
+                    app:layout_constraintVertical_bias="0.127" />
+
+                <TextView
+                    android:id="@+id/tv_testdata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AAAAAAAAAAAA"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_out" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout3"
@@ -51,14 +65,16 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageView"
+                        android:id="@+id/img_userImage"
                         android:layout_width="match_parent"
-                        android:layout_height="461dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/gambar_coverregister" />
+                        android:layout_height="200dp"
+                        android:scaleType="fitCenter"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_baseline_account_box_24"
+                        tools:src="@tools:sample/avatars" />
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/et_reg_username"
+                        android:id="@+id/et_detail_username"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -72,11 +88,12 @@
                         app:hintTextColor="@color/white">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/eti_reg_username"
+                            android:id="@+id/eti_detail_username"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableLeft="@drawable/ic_baseline_account_box_24"
                             android:drawablePadding="15dp"
+                            android:editable="false"
                             android:textColor="@color/accent8"
                             android:textColorHighlight="@color/white"
                             android:textColorHint="#FFFFFF"
@@ -86,7 +103,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/et_reg_email"
+                        android:id="@+id/et_detail_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -100,11 +117,12 @@
                         app:hintTextColor="@color/white">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/eti_reg_email"
+                            android:id="@+id/eti_detail_email"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableLeft="@drawable/ic_baseline_account_box_24"
+                            android:drawableLeft="@drawable/ic_baseline_email_24"
                             android:drawablePadding="15dp"
+                            android:editable="false"
                             android:textColor="@color/accent8"
                             android:textColorHighlight="@color/white"
                             android:textColorHint="#FFFFFF"
@@ -114,37 +132,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/et_reg_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:hint="@string/hintPasswordTF"
-                        android:padding="10dp"
-                        android:textColorHint="@color/white"
-                        app:boxStrokeColor="@color/accent3"
-                        app:boxStrokeWidth="3dp"
-                        app:hintTextColor="@color/white">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/eti_reg_password"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:drawableLeft="@drawable/ic_baseline_account_box_24"
-                            android:drawablePadding="15dp"
-                            android:inputType="textPassword"
-                            android:textColor="@color/accent8"
-                            android:textColorHighlight="@color/white"
-                            android:textColorHint="#FFFFFF"
-                            android:textColorLink="#F8F8F8"
-                            android:textStyle="normal"
-                            tools:text="@tools:sample/first_names" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/et_reg_class"
+                        android:id="@+id/et_detail_class"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -158,11 +146,12 @@
                         app:hintTextColor="@color/white">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/eti_reg_class"
+                            android:id="@+id/eti_detail_class"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableLeft="@drawable/ic_baseline_account_box_24"
+                            android:drawableLeft="@drawable/ic_baseline_account_balance_24"
                             android:drawablePadding="15dp"
+                            android:editable="false"
                             android:textColor="@color/accent8"
                             android:textColorHighlight="@color/white"
                             android:textColorHint="#FFFFFF"
@@ -172,7 +161,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/et_reg_nis"
+                        android:id="@+id/et_detail_nis"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -186,17 +175,20 @@
                         app:hintTextColor="@color/white">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/eti_reg_nis"
+                            android:id="@+id/eti_detail_nis"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableLeft="@drawable/ic_baseline_account_box_24"
+                            android:drawableLeft="@drawable/ic_baseline_format_list_numbered_24"
                             android:drawablePadding="15dp"
+                            android:editable="false"
+                            android:focusableInTouchMode="false"
                             android:inputType="number"
                             android:textColor="@color/accent8"
                             android:textColorHighlight="@color/white"
                             android:textColorHint="#FFFFFF"
                             android:textColorLink="#F8F8F8"
                             android:textStyle="normal"
+                            app:textInputLayoutFocusedRectEnabled="false"
                             tools:text="@tools:sample/us_zipcodes" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -206,5 +198,4 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
-</RelativeLayout>
+</FrameLayout>

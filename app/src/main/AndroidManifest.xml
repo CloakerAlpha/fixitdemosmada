@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.fixitkuv1">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -15,7 +16,7 @@
         android:theme="@style/Theme.FIXITKUV1"
         tools:targetApi="31">
         <activity
-            android:name=".DashboardAct"
+            android:name=".view.DashboardAct"
             android:exported="false" />
         <activity
             android:name=".SplashAct"
@@ -29,16 +30,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginAct"
+            android:name=".view.LoginAct"
             android:exported="true"
             android:windowSoftInputMode="adjustResize"></activity>
         <activity
-            android:name=".RegisterAct"
+            android:name=".view.RegisterAct"
             android:exported="true"
             android:windowSoftInputMode="adjustResize"></activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

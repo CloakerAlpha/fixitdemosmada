@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fixitkuv1.databinding.SplashBinding
+import com.example.fixitkuv1.view.LoginAct
 
 class SplashAct: AppCompatActivity() {
     companion object {

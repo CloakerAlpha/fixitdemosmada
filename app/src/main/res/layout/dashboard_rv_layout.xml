@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview1"
+        cardCornerRadius="5dp"
+        cardElevation="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/rv_dashboard_image"
+                android:layout_width="175dp"
+                android:layout_height="100dp"
+                android:foregroundGravity="center"
+                android:padding="4dp" />
+
+            <TextView
+                android:id="@+id/rv_dashboard_Judulmateri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/rv_dashboard_image"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/rv_dashboard_image"
+                android:text="JUDUL MATERI"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rv_dashboard_deskripsimateri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rv_dashboard_Judulmateri"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/rv_dashboard_image"
+                android:text="DESKRIPSI SINGKAT MATERI"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/rv_dashboard_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rv_dashboard_deskripsimateri"
+                android:layout_alignBottom="@+id/rv_dashboard_image"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="3dp"
+                android:layout_toRightOf="@id/rv_dashboard_image"
+                android:autoLink="web"
+                android:text="LINK"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="#000000" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
